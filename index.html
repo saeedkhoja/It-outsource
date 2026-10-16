@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zingo — sayt, ilova va AI foizsiz bo‘lib to‘lashga</title>
+  <meta name="description" content="Landing $1 000 dan, veb-sayt $3 000 dan, mobil ilova $8 000 dan. Summani 3, 6 yoki 12 oyga bo‘ling — 0% ustama, shartlar shartnomada ochiq. Narxni bepul hisoblang.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sayt, ilova va AI — foizsiz bo‘lib to‘lang | Zingo">
+  <meta property="og:description" content="Oldindan to‘liq to‘lamaysiz: 3, 6 yoki 12 oyga bo‘ling, 0% ustama. Narxni bepul hisoblaymiz.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="zmark" viewBox="25 25 778 780">
+    <path fill="currentColor" fill-rule="evenodd" d="M225 25H603A200 200 0 0 1 803 225V605A200 200 0 0 1 603 805H225A200 200 0 0 1 25 605V225A200 200 0 0 1 225 25ZM25 270Q335 210 645 170L700 280Q482 390 395 480L803 440V595Q480 615 178 662L110 545Q239 405 432 316L25 392Z"/>
+  </symbol>
+</svg>
+
+<header class="header" id="header">
+  <div class="container header__in">
+    <a href="#top" class="logo" aria-label="Zingo — bosh sahifa">
+      <svg class="logo__mark" aria-hidden="true"><use href="#zmark"/></svg>
+      <span class="logo__word" aria-hidden="true">z<span class="logo__i">ı</span>ngo</span>
+    </a>
+    <nav class="nav" aria-label="Asosiy menyu">
+      <a href="#xizmatlar">Xizmatlar</a>
+      <a href="#bolib-tolash">Bo‘lib to‘lash</a>
+      <a href="#ishlarimiz">Ishlarimiz</a>
+    </nav>
+    <a href="#ariza" class="btn btn--dark btn--sm">Narxni bilish</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero + kalkulyator -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <span class="pill"><i></i>Oldindan 100% to‘lov shart emas</span>
+        <h1><span class="line"><span>Sayt, ilova va AI&nbsp;—</span></span> <span class="line"><em>foizsiz bo‘lib to‘lang</em></span></h1>
+        <p class="lead">Landing, veb-sayt, mobil ilova yoki AI yechim. Summani 3, 6 yoki 12 oyga teng bo‘lasiz — umumiy narx oshmaydi.</p>
+        <ul class="hero__points">
+          <li>Barcha shartlar shartnomada</li>
+          <li>100% halol, yashirin to‘lovsiz</li>
+          <li>Narxni bepul hisoblaymiz</li>
+        </ul>
+        <div class="hero__cta">
+          <a href="#ariza" class="btn btn--dark btn--lg">Narxni bepul bilish<svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#ishlarimiz" class="btn btn--ghost btn--lg">12 ta loyihamiz</a>
+        </div>
+        <div class="trust">
+          <span class="trust__logos" aria-hidden="true">
+            <span><img src="assets/clients/kadra.svg" alt=""></span>
+            <span><img src="assets/clients/calora-icon.svg" alt=""></span>
+            <span><img src="assets/clients/cooperation.png" alt=""></span>
+            <span><img src="assets/clients/chontak.png" alt=""></span>
+            <span><img src="assets/clients/ifqa.svg" alt=""></span>
+          </span>
+          <p><b>Uztelecom, BRB</b>, davlat portali <br>va yana 9 ta brend bizga ishongan</p>
+        </div>
+      </div>
+
+      <div class="calc card" id="bolib-tolash">
+        <span class="sticker" aria-hidden="true"><b>0%</b>ustama</span>
+        <p class="calc__title" id="typeLabel">Sizga nima kerak?</p>
+        <div class="types" role="radiogroup" aria-labelledby="typeLabel">
+          <button type="button" class="type" role="radio" aria-checked="false" data-type="landing"><b>Landing</b><span>$1 000 dan</span></button>
+          <button type="button" class="type" role="radio" aria-checked="true" data-type="web"><b>Veb-sayt</b><span>$3 000 dan</span></button>
+          <button type="button" class="type" role="radio" aria-checked="false" data-type="mobile"><b>Mobil ilova</b><span>$8 000 dan</span></button>
+        </div>
+
+        <label for="budget" class="calc__title">Taxminiy byudjetingiz qancha?</label>
+        <div class="calc__amount">
+          <span class="calc__cur">$</span>
+          <input id="budget" class="calc__input" type="text" inputmode="numeric" autocomplete="off" value="3 000">
+        </div>
+        <input id="budgetRange" class="range" type="range" min="0" max="20" step="1" value="4" aria-label="Byudjetni tanlash">
+        <div class="range__marks"><span>$1 000</span><span>$50 000</span></div>
+        <p class="calc__hint" data-hint aria-live="polite">Veb-sayt — $3 000 dan. Aniq narxni loyihangizni ko‘rib, bepul aytamiz.</p>
+
+        <div class="calc__sub"><span>Necha oyga bo‘lasiz?</span><span class="calc__zero">0% ustama</span></div>
+        <div class="plans" role="radiogroup" aria-label="Bo‘lib to‘lash muddati">
+          <button type="button" class="plan" role="radio" aria-checked="false" data-months="3">
+            <span class="plan__top"><span class="plan__term">3 oy</span><span class="plan__pay"><b data-pay>$1 000</b> /oy</span></span>
+            <span class="plan__bar" data-bar aria-hidden="true"></span>
+          </button>
+          <button type="button" class="plan" role="radio" aria-checked="true" data-months="6">
+            <span class="plan__top"><span class="plan__term">6 oy</span><span class="plan__pay"><b data-pay>$500</b> /oy</span></span>
+            <span class="plan__bar" data-bar aria-hidden="true"></span>
+          </button>
+          <button type="button" class="plan" role="radio" aria-checked="false" data-months="12">
+            <span class="plan__top"><span class="plan__term">12 oy</span><span class="plan__pay"><b data-pay>$250</b> /oy</span></span>
+            <span class="plan__bar" data-bar aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div class="calc__sum">
+          <span>Ustama: <b class="is-zero">$0</b></span>
+          <span>Jami: <b data-total>$3 000</b></span>
+        </div>
+
+        <form class="quick" id="quickForm" novalidate>
+          <label for="qPhone" class="quick__label">Raqamingizni qoldiring — aniq narx va to‘lov jadvalini bepul hisoblab beramiz</label>
+          <div class="quick__row">
+            <input id="qPhone" name="phone" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67">
+            <button type="submit" class="btn btn--dark">Aniq narxni bilish<svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <p class="quick__note">Bepul. Raqamingiz uchinchi shaxslarga berilmaydi.</p>
+          <p class="quick__msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="clients">
+      <p class="clients__label">Bizga ishonganlar</p>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track" data-marquee></div></div>
+    </div>
+  </section>
+
+  <!-- Afzalliklar -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Halol hisob. Hammasi shartnomada.</h2>
+        <p>Loyihani boshlash uchun katta mablag‘ yig‘ib o‘tirmaysiz — pulingiz biznes aylanmasida qoladi.</p>
+      </div>
+      <div class="why">
+        <article class="why__item">
+          <div class="why__big">3<span>/</span>6<span>/</span>12</div>
+          <h3>Oyga bo‘lib to‘lash</h3>
+          <p>Butun summani oldindan to‘lamaysiz. Muddatni o‘zingiz tanlaysiz, oylik to‘lov teng bo‘ladi.</p>
+        </article>
+        <article class="why__item">
+          <div class="why__big" data-count-from="25" data-count-to="0" data-suffix="%">0%</div>
+          <h3>Ortiqcha foiz yo‘q</h3>
+          <p>12 oyga bo‘lsangiz ham narx oshmaydi. Qancha kelishsak — shuncha to‘laysiz.</p>
+        </article>
+        <article class="why__item">
+          <div class="why__big" data-count-from="0" data-count-to="100" data-suffix="%">100%</div>
+          <h3>Halol</h3>
+          <p>Foizsiz, yashirin to‘lovlarsiz. Narx, muddat va oylik to‘lov shartnomada ochiq yoziladi.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Xizmatlar -->
+  <section class="section section--soft" id="xizmatlar">
+    <div class="container">
+      <div class="section__head">
+        <h2>Narxlarni yashirmaymiz</h2>
+        <p>Quyida — boshlang‘ich narx va oylik to‘lov. Aniq summani loyihangizni ko‘rib, bepul hisoblab beramiz.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="service__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18M7 12.5h6M7 15.5h10"/></svg></div>
+          <h3>Landing sahifa</h3>
+          <p>Reklamadan ariza yig‘adigan bir sahifali sayt.</p>
+          <div class="service__price">
+            <span><span class="price"><b data-price="landing">$1 000</b> dan</span><span class="price__m">yoki oyiga <span data-price-month="landing">$83</span> dan</span></span>
+            <a class="service__calc" href="#bolib-tolash" data-pick="landing">Hisoblash</a>
+          </div>
+        </article>
+        <article class="service">
+          <div class="service__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></div>
+          <h3>Veb-sayt</h3>
+          <p>Internet-do‘kon, kompaniya sayti yoki platforma.</p>
+          <div class="service__price">
+            <span><span class="price"><b data-price="web">$3 000</b> dan</span><span class="price__m">yoki oyiga <span data-price-month="web">$250</span> dan</span></span>
+            <a class="service__calc" href="#bolib-tolash" data-pick="web">Hisoblash</a>
+          </div>
+        </article>
+        <article class="service">
+          <div class="service__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></div>
+          <h3>Mobil ilova</h3>
+          <p>Mijozlaringiz telefonida — iOS va Android uchun ilova.</p>
+          <div class="service__price">
+            <span><span class="price"><b data-price="mobile">$8 000</b> dan</span><span class="price__m">yoki oyiga <span data-price-month="mobile">$667</span> dan</span></span>
+            <a class="service__calc" href="#bolib-tolash" data-pick="mobile">Hisoblash</a>
+          </div>
+        </article>
+        <article class="service">
+          <div class="service__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="12" rx="4"/><path d="M12 7V4M9 12v2M15 12v2M2 12v2M22 12v2"/></svg></div>
+          <h3>AI agent</h3>
+          <p>Mijozlarga 24/7 javob beradigan aqlli yordamchi.</p>
+          <div class="service__price">
+            <span><span class="price price--soft">Narxi vazifaga qarab</span><span class="price__m">Bepul baholab beramiz</span></span>
+          </div>
+        </article>
+        <article class="service">
+          <div class="service__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9L11 3z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z"/></svg></div>
+          <h3>AI yechimlar</h3>
+          <p>Qo‘lda bajariladigan takroriy ishlarni sun’iy intellektga topshiring.</p>
+          <div class="service__price">
+            <span><span class="price price--soft">Narxi vazifaga qarab</span><span class="price__m">Bepul baholab beramiz</span></span>
+          </div>
+        </article>
+        <a href="#ariza" class="service service--cta">
+          <div class="service__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          <h3>Boshqa g‘oya bormi?</h3>
+          <p>Ayting — narxini bepul hisoblaymiz.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="section" id="ishlarimiz">
+    <div class="container">
+      <div class="section__head">
+        <h2>Qilgan ishlarimiz</h2>
+        <p>12 ta loyiha: davlat tuzilmalari, bank, AI va onlayn servislar. Hammasi hozir ishlab turibdi — bosib ko‘ring.</p>
+      </div>
+      <div class="wgrid">
+        <a class="wcard" href="https://uztelecom.uz/" target="_blank" rel="noopener" style="--tint:#EEF3FA">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/uztelecom.svg" alt="Uztelecom" style="--h:26px"></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">Telecom</span><span class="wcard__domain">uztelecom.uz</span></span>
+            <span class="wcard__name">Uztelecom</span>
+            <span class="wcard__desc">Rasmiy veb-saytni qayta ishlab chiqish va servislarni optimallashtirish.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://brb-biznes.uz/" target="_blank" rel="noopener" style="--tint:#FDF1EF">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/brb.svg" alt="BRB" style="--h:46px"></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">Fintech</span><span class="wcard__domain">brb-biznes.uz</span></span>
+            <span class="wcard__name">Biznesni Rivojlantirish Bank</span>
+            <span class="wcard__desc">Remote banking platformasi — onlayn bank xizmatlari ekotizimi.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://ifqa.pro/" target="_blank" rel="noopener" style="--tint:#EDF7F0">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/ifqa.svg" alt="" style="--h:30px"><span class="lg-ifqa"><b>IFQA</b><small>Islamic Finance AI</small></span></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">AI · Fintech</span><span class="wcard__domain">ifqa.pro</span></span>
+            <span class="wcard__name">IFQA</span>
+            <span class="wcard__desc">Islomiy moliya bo‘yicha AI yordamchi — chat, ovozli savol va hujjat tahlili.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://kadrhr.com/" target="_blank" rel="noopener" style="--tint:#EEF4FE">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/kadra.svg" alt="" style="--h:36px"><span class="wlogo__text">Kadra</span></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">HR · SaaS</span><span class="wcard__domain">kadrhr.com</span></span>
+            <span class="wcard__name">Kadra HR</span>
+            <span class="wcard__desc">Telegram ichida ishlaydigan HR platforma — vazifalar, ish haqi va davomat.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://calora.uz/" target="_blank" rel="noopener" style="--tint:#F1F8EA">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/calora.svg" alt="Calora" style="--h:46px"></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">HealthTech</span><span class="wcard__domain">calora.uz</span></span>
+            <span class="wcard__name">Calora</span>
+            <span class="wcard__desc">AI yordamida kaloriya hisoblash ilovasi — mobil ilova va backend noldan.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://robita.pro/" target="_blank" rel="noopener" style="--tint:#EAF8F3">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/robita.png" alt="Robita" style="--h:36px"></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">Travel · eSIM</span><span class="wcard__domain">robita.pro</span></span>
+            <span class="wcard__name">Robita</span>
+            <span class="wcard__desc">200+ davlat uchun sayohat eSIM — QR orqali bir necha daqiqada ulanish.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://dtvsoft.com/" target="_blank" rel="noopener" style="--tint:#EEF0F7">
+          <span class="wcard__stage"><span class="wlogo"><span class="lg-dtv"><b>dtv</b>soft</span></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">Logistika · SaaS</span><span class="wcard__domain">dtvsoft.com</span></span>
+            <span class="wcard__name">DTV Soft</span>
+            <span class="wcard__desc">AQSh yuk tashish kompaniyalari uchun yuk va haydovchilarni boshqarish platformasi.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://chontak.uz/" target="_blank" rel="noopener" style="--tint:#EEF3FE">
+          <span class="wcard__stage"><span class="wlogo"><span class="lg-cover"><img src="assets/clients/chontak.png" alt=""></span><span class="wlogo__text">Chontak</span></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">Fintech · Mobil</span><span class="wcard__domain">chontak.uz</span></span>
+            <span class="wcard__name">Chontak</span>
+            <span class="wcard__desc">Shaxsiy moliya ilovasi — xarajat, daromad va qarzlarni bir joyda yuritish.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://konsorta.uz/" target="_blank" rel="noopener" style="--tint:#EFEEFD">
+          <span class="wcard__stage"><span class="wlogo"><span class="lg-castly"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v17"/><path d="M14 21V9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v12"/><path d="M9 7h2M9 11h2M9 15h2"/></svg></span><span class="wlogo__text">Castly</span></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">B2B platforma</span><span class="wcard__domain">konsorta.uz</span></span>
+            <span class="wcard__name">Castly</span>
+            <span class="wcard__desc">Tender loyihalarini topish va ularga jamoa yig‘ish platformasi.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://ibratfarzandlari.uz/" target="_blank" rel="noopener" style="--tint:#FFF5EA">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/ibrat.svg" alt="Ibrat Farzandlari" style="--h:60px"></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">EdTech</span><span class="wcard__domain">ibratfarzandlari.uz</span></span>
+            <span class="wcard__name">Ibrat Farzandlari</span>
+            <span class="wcard__desc">Ta’lim uchun mobil ilova va backend — to‘liq qurib berildi.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://cooperation.uz/" target="_blank" rel="noopener" style="--tint:#EAF6F2">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/cooperation.png" alt="" style="--h:44px"><span class="lg-coop">Elektron<br>kooperatsiya portali</span></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">GovTech</span><span class="wcard__domain">cooperation.uz</span></span>
+            <span class="wcard__name">Elektron Kooperatsiya Portali</span>
+            <span class="wcard__desc">Davlat kooperatsiya portalini ishlab chiqish va integratsiyalar.</span>
+          </span>
+        </a>
+        <a class="wcard" href="https://andeli.uz/" target="_blank" rel="noopener" style="--tint:#EDF3FA">
+          <span class="wcard__stage"><span class="wlogo"><img src="assets/clients/andeli.svg" alt="Andeli" style="--h:26px"></span><span class="wcard__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></span>
+          <span class="wcard__body">
+            <span class="wcard__meta"><span class="wcard__tag">E-commerce</span><span class="wcard__domain">andeli.uz</span></span>
+            <span class="wcard__name">Andeli</span>
+            <span class="wcard__desc">Kuchlanish stabilizatorlari do‘koni uchun veb-tizim va avtomatlashtirish.</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ariza -->
+  <section class="section section--soft" id="ariza">
+    <div class="container contact">
+      <div class="contact__text">
+        <h2>Aniq narxni bilib oling</h2>
+        <p>Nima kerakligini ayting — mos yechim va oyma-oy to‘lov jadvalini bepul tuzib beramiz.</p>
+        <p class="steps__label">Keyin nima bo‘ladi?</p>
+        <ol class="steps">
+          <li>Ariza qoldirasiz</li>
+          <li>Qo‘ng‘iroq qilib, vazifani aniqlaymiz</li>
+          <li>Narx ma’qul bo‘lsa — shartnoma tuzamiz</li>
+        </ol>
+        <div class="contact__links">
+          <a class="clink" href="https://t.me/+998900378770" target="_blank" rel="noopener">
+            <span class="clink__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6.5 2.5M21 4l-3.5 16-8-6.5M21 4L9.5 13.5V19l3.2-3"/></svg></span>
+            <span><b>Telegramga yozing</b><span>Eng tezkor yo‘l</span></span>
+          </a>
+          <a class="clink" href="tel:+998900378770">
+            <span class="clink__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg></span>
+            <span><b>+998 90 037 87 70</b><span>Qo‘ng‘iroq qiling</span></span>
+          </a>
+        </div>
+      </div>
+
+      <form class="form card" id="leadForm" novalidate>
+        <fieldset class="field">
+          <legend>Qaysi xizmat kerak?</legend>
+          <div class="chips">
+            <button type="button" class="chip" aria-pressed="false" data-value="Mobil ilova">Mobil ilova</button>
+            <button type="button" class="chip" aria-pressed="false" data-value="Landing sahifa">Landing</button>
+            <button type="button" class="chip" aria-pressed="false" data-value="Veb-sayt">Veb-sayt</button>
+            <button type="button" class="chip" aria-pressed="false" data-value="AI agent">AI agent</button>
+            <button type="button" class="chip" aria-pressed="false" data-value="AI yechim">AI yechim</button>
+            <button type="button" class="chip" aria-pressed="false" data-value="Boshqa">Boshqa</button>
+          </div>
+        </fieldset>
+
+        <div class="row2">
+          <div class="field">
+            <label for="fBudget">Taxminiy byudjet</label>
+            <div class="input-wrap">
+              <span>$</span>
+              <input id="fBudget" name="budget" type="text" inputmode="numeric" autocomplete="off" value="3 000">
+            </div>
+            <span class="field__err">Taxminiy summani kiriting</span>
+          </div>
+          <fieldset class="field">
+            <legend>Bo‘lib to‘lash</legend>
+            <div class="seg" role="radiogroup" aria-label="Bo‘lib to‘lash muddati">
+              <button type="button" role="radio" aria-checked="false" data-months="3">3 oy</button>
+              <button type="button" role="radio" aria-checked="true" data-months="6">6 oy</button>
+              <button type="button" role="radio" aria-checked="false" data-months="12">12 oy</button>
+            </div>
+          </fieldset>
+        </div>
+        <p class="form__monthly">Oyiga <b data-form-pay>$500</b> · ustama $0</p>
+
+        <div class="row2">
+          <div class="field">
+            <label for="fName">Ismingiz</label>
+            <input id="fName" name="name" type="text" autocomplete="name" required>
+            <span class="field__err">Ismingizni kiriting</span>
+          </div>
+          <div class="field">
+            <label for="fPhone">Telefon</label>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required>
+            <span class="field__err">Telefon raqamni to‘liq kiriting</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fNote">Loyiha haqida <span>(ixtiyoriy)</span></label>
+          <textarea id="fNote" name="note" rows="3" placeholder="Masalan: do‘konim uchun internet-do‘kon kerak"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--dark btn--block" id="fSubmit">Narx va jadvalni olish</button>
+        <p class="form__privacy" id="fStatus" role="status">Bepul. Ma’lumotlaringiz uchinchi shaxslarga berilmaydi.</p>
+
+        <div class="form__ok" hidden>
+          <span class="form__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <h3>Rahmat!</h3>
+          <p data-ok-text>Arizangiz qabul qilindi. Tez orada qo‘ng‘iroq qilib, narx va jadvalni aytamiz.</p>
+          <a class="btn btn--ghost" href="https://t.me/+998900378770" target="_blank" rel="noopener" data-ok-tg hidden>Telegramni ochish</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__in">
+    <a href="#top" class="logo logo--sm" aria-label="Zingo — yuqoriga">
+      <svg class="logo__mark" aria-hidden="true"><use href="#zmark"/></svg>
+      <span class="logo__word" aria-hidden="true">z<span class="logo__i">ı</span>ngo</span>
+    </a>
+    <p class="footer__copy">© <span id="year">2026</span> Zingo. Sayt, ilova va AI — foizsiz bo‘lib to‘lashga.</p>
+    <div class="footer__links">
+      <a href="https://t.me/+998900378770" target="_blank" rel="noopener">Telegram</a>
+      <a href="tel:+998900378770">+998 90 037 87 70</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
