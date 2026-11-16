@@ -105,7 +105,9 @@ em { font-style: normal; }
 .logo { display: inline-flex; align-items: center; gap: 10px; }
 .logo__mark { width: 32px; height: 32px; flex: none; transition: transform .6s var(--ease); }
 .logo:hover .logo__mark { transform: rotate(-12deg) scale(1.06); }
-.logo__word { font-size: 27px; font-weight: 700; letter-spacing: -.04em; line-height: 1; position: relative; top: -2px; }
+.logo__word { font-size: 27px; font-weight: 700; letter-spacing: -.04em; line-height: 1; position: relative; top: -2px; white-space: nowrap; }
+.logo__tech { margin-left: .22em; font-weight: 500; letter-spacing: -.02em; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+body.menu-open .header .logo__tech { background: none; color: var(--on-accent); }
 .logo__i { position: relative; }
 .logo__i::after {
   content: ""; position: absolute; left: .109em; top: .17em; width: .16em; height: .16em; border-radius: 50%;
@@ -467,6 +469,39 @@ body.menu-open .burger span { background: var(--cream); }
   .works { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
+/* IT Park ishonch belgisi (hero) */
+.trust { display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 14px; color: var(--mute); transition: color .3s; }
+.trust b { color: var(--cream); font-weight: 600; }
+.trust:hover { color: var(--cream); }
+.trust__ic { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--grad); color: var(--on-accent); flex: none; }
+.trust__ic svg { width: 13px; height: 13px; }
+
+/* ---------- Rasmiy kompaniya / litsenziyalar ---------- */
+.legal { border-top: 1px solid var(--line); }
+.legal__grid { display: grid; gap: 48px; }
+.legal__p { max-width: 520px; margin-top: 24px; font-size: 18px; color: var(--mute); }
+.legal__list { margin-top: 32px; border-top: 1px solid var(--line); }
+.legal__list > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.legal__list dt { font-size: 13px; color: var(--mute-2); }
+.legal__list dd { font-size: 16px; font-weight: 600; }
+@media (min-width: 560px) { .legal__list > div { grid-template-columns: 170px 1fr; gap: 16px; align-items: baseline; } }
+.docs { display: grid; gap: 20px; align-content: start; }
+.doc { display: block; border-radius: 22px; overflow: hidden; background: var(--ink-2); border: 1px solid var(--line); transition: border-color .3s, transform .6s var(--ease); }
+.doc__img { display: block; padding: 16px; background: radial-gradient(120% 100% at 50% 0%, rgba(124, 77, 255, .35), transparent 70%), #151112; overflow: hidden; }
+.doc__img img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .8); transform: rotate(-1.5deg); transition: transform .8s var(--ease); }
+.doc:hover { border-color: var(--line-2); }
+.doc:hover .doc__img img { transform: rotate(0) scale(1.02); }
+.doc__cap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px 18px; }
+.doc__cap b { display: block; font-weight: 600; }
+.doc__cap small { display: block; font-size: 13px; color: var(--mute); }
+.doc__open { display: inline-flex; align-items: center; gap: 6px; flex: none; font-size: 14px; font-weight: 600; color: var(--accent-2); }
+.doc__open svg { width: 14px; height: 14px; transition: transform .4s var(--ease); }
+.doc:hover .doc__open svg { transform: translate(2px, -2px); }
+@media (min-width: 1024px) {
+  .legal__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 72px; align-items: center; }
+  .doc__img { padding: 28px; }
+}
+
 /* ---------- Offer / calculator ---------- */
 .offer { position: relative; padding: 96px 0; background: var(--grad); color: var(--on-accent); overflow: hidden; border-radius: 32px 32px 0 0; }
 .offer::before { content: ""; position: absolute; width: 900px; height: 900px; right: -300px; top: -400px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, .35), transparent 60%); pointer-events: none; }
@@ -627,14 +662,21 @@ body.menu-open .burger span { background: var(--cream); }
 .footer__links a { color: var(--mute); transition: color .3s; }
 .footer__links a:hover { color: var(--cream); }
 @media (min-width: 900px) { .footer__top { grid-template-columns: 1fr auto; align-items: end; } }
-.footer__word { display: flex; justify-content: space-between; margin-top: 48px; padding-bottom: .16em; font-size: 32vw; font-weight: 800; letter-spacing: -.07em; line-height: .78; color: var(--cream); user-select: none; }
+/* "zingo" + "tech" bitta qatorda; o'lcham konteyner eniga moslanadi (lockup kengligi ~3.55em) */
+.footer__word { position: relative; display: flex; align-items: baseline; margin-top: 48px; padding-bottom: .16em; font-size: min(calc((100vw - var(--gutter) * 2) / 3.55), calc(1240px / 3.55)); font-weight: 800; letter-spacing: .03em; line-height: .78; color: var(--cream); user-select: none; }
 .footer__word span { display: inline-block; position: relative; transform: translateY(var(--y, 0)); transition: transform 1.2s var(--ease); }
 /* Nuqta "ı" ustunining aniq markazida va undan biroz yuqorida (shrift o‘lchovlaridan) */
 .footer__word span i { position: absolute; left: .117em; top: -.035em; width: .172em; height: .172em; border-radius: 50%; background: var(--grad-dot); transform: translateX(-50%); }
 .js .footer__word span { --y: 60%; }
 .js .footer__word.is-in span { --y: 0; }
 .footer__word span:nth-child(2) { transition-delay: .06s; } .footer__word span:nth-child(3) { transition-delay: .12s; } .footer__word span:nth-child(4) { transition-delay: .18s; } .footer__word span:nth-child(5) { transition-delay: .24s; }
-.footer__copy { margin-top: 28px; font-size: 13px; color: var(--mute-2); }
+.footer__tech { margin-left: .2em; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: .6em; letter-spacing: -.01em; line-height: 1;
+  background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em;
+  opacity: 0; transform: translateY(30%); transition: opacity .8s .35s, transform 1.2s .35s var(--ease); }
+.footer__word.is-in .footer__tech, html:not(.js) .footer__tech { opacity: 1; transform: none; }
+.footer__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 28px; font-size: 13px; color: var(--mute-2); }
+.footer__legal a { transition: color .3s; }
+.footer__legal a:hover { color: var(--cream); }
 
 /* ---------- Sticky mobile CTA ---------- */
 .sticky {
@@ -673,3 +715,6 @@ body.menu-open .burger span { background: var(--cream); }
   .grain { display: none; }
   .h1 .ln > span, .split-w > span { transform: none !important; }
 }
+
+/* Honeypot maydoni: ekrandan tashqarida, odamlar ko'rmaydi */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

@@ -1,9 +1,11 @@
 (() => {
   // ================= SOZLAMALAR =================
   const TELEGRAM_URL = 'https://t.me/+998999133822';
-  // Arizalar shu manzilga yuboriladi (Vercel'da api/lead.js → Telegram bot).
+  // Arizalar shu manzilga yuboriladi: Sara backend (POST /api/leads) → Telegram bot → guruh.
   // Bo‘sh qolsa: ariza matni nusxalanadi va Telegram chati ochiladi.
-  const LEAD_ENDPOINT = '/api/lead';
+  const LEAD_ENDPOINT = 'https://api.saraaa.com/api/leads';
+  // Telegram xabari sarlavhasida ko‘rinadigan sayt nomi.
+  const SITE_NAME = 'Zingo Tech';
   // Meta (Instagram/Facebook) Pixel ID. Ads Manager → Events Manager'dan oling.
   // Yozilsa: PageView, ariza yuborilganda "Lead", Telegram/qo‘ng‘iroq bosilganda "Contact" yuboriladi.
   const META_PIXEL_ID = '';
@@ -432,7 +434,7 @@
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(d),
     });
-    if (!res.ok) throw new Error(String(res.status));
+    if (!res.ok) throw Object.assign(new Error(String(res.status)), { status: res.status });
     return 'sent';
   }
 
@@ -443,7 +445,9 @@
     if (!(okName && okPhone)) { $('[aria-invalid="true"]', form).focus(); return; }
 
     const data = {
+      site: SITE_NAME,
       source: 'Ariza formasi',
+      website: form.elements.website?.value || '', // honeypot: odamlar ko‘rmaydi, botlar to‘ldiradi
       name: fName.value.trim(),
       phone: fPhone.value.trim(),
       services: chips.filter((c) => c.getAttribute('aria-pressed') === 'true').map((c) => c.dataset.value),
@@ -464,9 +468,11 @@
         ? 'Arizangiz qabul qilindi. Tez orada qo‘ng‘iroq qilib, narx va to‘lov jadvalini aytamiz.'
         : 'Ariza matni nusxalandi. Ochilgan Telegram chatiga joylab yuboring — tez orada javob beramiz.';
       ok.hidden = false;
-    } catch {
+    } catch (err) {
       status.classList.add('is-error');
-      status.textContent = 'Yuborib bo‘lmadi. Telegramga yozing yoki qo‘ng‘iroq qiling: +998 99 913 38 22';
+      status.textContent = err?.status === 429
+        ? 'Juda ko‘p urinish. Bir daqiqadan keyin qayta yuboring yoki qo‘ng‘iroq qiling: +998 99 913 38 22'
+        : 'Yuborib bo‘lmadi. Telegramga yozing yoki qo‘ng‘iroq qiling: +998 99 913 38 22';
     } finally {
       submitBtn.disabled = false;
       submitLabel.textContent = 'Bepul narx olish';
