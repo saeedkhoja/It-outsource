@@ -25,14 +25,24 @@ module.exports = async (req, res) => {
   if (phone.replace(/\D/g, '').length < 9) return res.status(400).json({ ok: false, error: 'phone' });
 
   const services = Array.isArray(d.services) ? d.services.map((s) => clean(s, 40)).filter(Boolean) : [];
+  // Reklama manbasi: qaysi kampaniya / kreativdan kelgani (utm_* parametrlar)
+  const u = d.utm && typeof d.utm === 'object' ? d.utm : {};
+  const ad = [
+    u.app && `ilova: ${clean(u.app, 20)}`,
+    u.utm_source && `source: ${clean(u.utm_source, 60)}`,
+    u.utm_campaign && `kampaniya: ${clean(u.utm_campaign, 120)}`,
+    u.utm_content && `kreativ: ${clean(u.utm_content, 120)}`,
+    u.utm_term && `term: ${clean(u.utm_term, 60)}`,
+    u.fbclid && 'fbclid: bor',
+  ].filter(Boolean).join(' · ');
   const text = [
     'Yangi ariza — Zingo',
     `Manba: ${clean(d.source, 40) || 'Sayt'}`,
+    ad && `Reklama: ${ad}`,
     d.name && `Ism: ${clean(d.name, 100)}`,
     `Telefon: ${phone}`,
     `Xizmat: ${services.length ? services.join(', ') : '—'}`,
-    `Byudjet: ${fmt(num(d.budget))}`,
-    `Muddat: ${num(d.months)} oy (oyiga ${fmt(num(d.monthly))})`,
+    num(d.budget) > 0 && `Hisob: ${fmt(num(d.budget))} · ${num(d.months)} oy (oyiga ${fmt(num(d.monthly))})`,
     d.note && `Izoh: ${clean(d.note, 1000)}`,
   ].filter(Boolean).join('\n');
 
