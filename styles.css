@@ -718,3 +718,15 @@ body.menu-open .burger span { background: var(--cream); }
 
 /* Honeypot maydoni: ekrandan tashqarida, odamlar ko'rmaydi */
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---------- Mobil: kamroq matn ---------- */
+/* Telefonda ikkinchi darajali matnlar yashiriladi — sarlavha, narx, raqam va rasm gapiradi */
+@media (max-width: 719px) {
+  .m-hide, .svc__desc, .fcard__desc, .work__desc, .step p { display: none !important; }
+  .svc__row a { grid-template-areas: "n name go" ". price price"; padding: 22px 0; }
+  .fcard__name { margin-top: 14px; }
+  .fcard__did { margin-top: 14px; }
+  .step { padding-bottom: 28px; }
+  .step h3 { margin-top: 4px; }
+  .shead { margin-bottom: 36px; }
+}
